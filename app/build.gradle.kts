@@ -5,13 +5,13 @@ plugins {
 }
 
 android {
-	namespace = "com.danilo.tasks"
+	namespace = "com.daniloA.tasks"
 	compileSdk {
 		version = release(36)
 	}
 
 	defaultConfig {
-		applicationId = "com.danilo.tasks"
+		applicationId = "com.daniloA.tasks"
 		minSdk = 24
 		targetSdk = 36
 		versionCode = 1

@@ -1,4 +1,4 @@
-package com.danilo.tasks.ui
+package com.daniloA.tasks.ui
 
 import android.os.Bundle
 import android.util.Log
@@ -14,13 +14,13 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.database
-import com.danilo.tasks.R
-import com.danilo.tasks.data.model.Status
-import com.danilo.tasks.data.model.Task
-import com.danilo.tasks.databinding.FragmentFormTaskBinding
-import com.danilo.tasks.util.DatabaseManager
-import com.danilo.tasks.util.initToolbar
-import com.danilo.tasks.util.showBottomSheet
+import com.daniloA.tasks.R
+import com.daniloA.tasks.data.model.Status
+import com.daniloA.tasks.data.model.Task
+import com.daniloA.tasks.databinding.FragmentFormTaskBinding
+import com.daniloA.tasks.util.DatabaseManager
+import com.daniloA.tasks.util.initToolbar
+import com.daniloA.tasks.util.showBottomSheet
 
 class FormTaskFragment : Fragment() {
 

@@ -1,4 +1,4 @@
-package com.danilo.tasks.ui.adapter
+package com.daniloA.tasks.ui.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:259752079813:android:740fbb1b3897a304861bac",
         "android_client_info": {
-          "package_name": "com.danilo.task"
+          "package_name": "com.daniloA.tasks"
         }
       },
       "oauth_client": [],
@@ -28,13 +28,13 @@
       "client_info": {
         "mobilesdk_app_id": "1:259752079813:android:98657578de290697861bac",
         "android_client_info": {
-          "package_name": "com.daniloA.task"
+          "package_name": "com.daniloA.tasks"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDqX6-Dw5nB18KygILJbZH2IqhI3OkExXQ"
+          "current_key": "AIzaSyDqX6-Dw5nB18KygILJbZH2IqkI3OkExXQ"
         }
       ],
       "services": {

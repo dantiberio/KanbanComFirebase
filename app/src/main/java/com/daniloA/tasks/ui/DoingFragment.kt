@@ -1,4 +1,4 @@
-package com.danilo.tasks.ui
+package com.daniloA.tasks.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,15 +10,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
-import com.danilo.tasks.data.model.Status
-import com.danilo.tasks.data.model.Task
-import com.danilo.tasks.databinding.FragmentDoneBinding
-import com.danilo.tasks.ui.adapter.TaskAdapter
-import com.danilo.tasks.util.DatabaseManager
+import com.daniloA.tasks.data.model.Status
+import com.daniloA.tasks.data.model.Task
+import com.daniloA.tasks.databinding.FragmentDoingBinding
+import com.daniloA.tasks.ui.adapter.TaskAdapter
+import com.daniloA.tasks.util.DatabaseManager
 
 
-class DoneFragment : Fragment() {
-	private var _binding: FragmentDoneBinding? = null
+class DoingFragment : Fragment() {
+	private var _binding: FragmentDoingBinding? = null
 	private val binding get() = _binding!!
 
 	private lateinit var auth: FirebaseAuth
@@ -28,7 +28,7 @@ class DoneFragment : Fragment() {
 		inflater: LayoutInflater, container: ViewGroup?,
 		savedInstanceState: Bundle?
 	): View {
-		_binding = FragmentDoneBinding.inflate(inflater, container, false)
+		_binding = FragmentDoingBinding.inflate(inflater, container, false)
 		return binding.root
 	}
 
@@ -58,7 +58,7 @@ class DoneFragment : Fragment() {
 				if (!snapshot.exists()) return@addOnSuccessListener
 
 				val tasks = DatabaseManager.snapshotToTasks(snapshot).filter {
-						task -> task.status == Status.DONE
+						task -> task.status == Status.DOING
 				}
 
 				taskAdapter.submitList(tasks)
@@ -73,6 +73,7 @@ class DoneFragment : Fragment() {
 			setHasFixedSize(true)
 			adapter = taskAdapter
 		}
+
 	}
 
 	private fun optionSelected(task: Task, option: Int) {
@@ -85,5 +86,6 @@ class DoneFragment : Fragment() {
 			else -> ""
 		}
 		Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+
 	}
 }

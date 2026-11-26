@@ -7,7 +7,7 @@
 
 	<fragment
 		android:id="@+id/splashFragment"
-		android:name="com.danilo.tasks.ui.SplashFragment"
+		android:name="com.daniloA.tasks.ui.SplashFragment"
 		android:label="fragment_splash"
 		tools:layout="@layout/fragment_splash" >
 		<action
@@ -23,17 +23,17 @@
 		app:startDestination="@id/loginFragment">
 		<fragment
 			android:id="@+id/registerFragment"
-			android:name="com.danilo.tasks.ui.auth.RegisterFragment"
+			android:name="com.daniloA.tasks.ui.auth.RegisterFragment"
 			android:label="fragment_register"
 			tools:layout="@layout/fragment_register" />
 		<fragment
 			android:id="@+id/recoverAccountFragment"
-			android:name="com.danilo.tasks.ui.auth.RecoverAccountFragment"
+			android:name="com.daniloA.tasks.ui.auth.RecoverAccountFragment"
 			android:label="fragment_recover_account"
 			tools:layout="@layout/fragment_recover_account" />
 		<fragment
 			android:id="@+id/loginFragment"
-			android:name="com.danilo.tasks.ui.auth.LoginFragment"
+			android:name="com.daniloA.tasks.ui.auth.LoginFragment"
 			android:label="fragment_login"
 			tools:layout="@layout/fragment_login">
 			<action
@@ -49,7 +49,7 @@
 	</navigation>
 	<fragment
 		android:id="@+id/homeFragment"
-		android:name="com.danilo.tasks.ui.HomeFragment"
+		android:name="com.daniloA.tasks.ui.HomeFragment"
 		android:label="fragment_home"
 		tools:layout="@layout/fragment_home" >
 		<action
@@ -61,7 +61,7 @@
 	</fragment>
 	<fragment
 		android:id="@+id/formTaskFragment"
-		android:name="com.danilo.tasks.ui.FormTaskFragment"
+		android:name="com.daniloA.tasks.ui.FormTaskFragment"
 		android:label="fragment_form_task"
 		tools:layout="@layout/fragment_form_task" />
 </navigation>

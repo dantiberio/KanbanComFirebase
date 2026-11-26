@@ -1,4 +1,4 @@
-package com.danilo.tasks.ui.auth
+package com.daniloA.tasks.ui.auth
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.danilo.tasks.R
-import com.danilo.tasks.databinding.FragmentRecoverAccountBinding
-import com.danilo.tasks.util.initToolbar
-import com.danilo.tasks.util.showBottomSheet
+import com.daniloA.tasks.R
+import com.daniloA.tasks.databinding.FragmentRecoverAccountBinding
+import com.daniloA.tasks.util.initToolbar
+import com.daniloA.tasks.util.showBottomSheet
 
 class RecoverAccountFragment : Fragment() {
 

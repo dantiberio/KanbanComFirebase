@@ -1,4 +1,4 @@
-package com.danilo.tasks
+package com.daniloA.tasks
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

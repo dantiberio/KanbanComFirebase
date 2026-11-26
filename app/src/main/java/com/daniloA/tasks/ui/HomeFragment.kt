@@ -1,4 +1,4 @@
-package com.danilo.tasks.ui
+package com.daniloA.tasks.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,9 +10,9 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
-import com.danilo.tasks.R
-import com.danilo.tasks.databinding.FragmentHomeBinding
-import com.danilo.tasks.ui.adapter.ViewPagerAdapter
+import com.daniloA.tasks.R
+import com.daniloA.tasks.databinding.FragmentHomeBinding
+import com.daniloA.tasks.ui.adapter.ViewPagerAdapter
 
 
 class HomeFragment : Fragment() {

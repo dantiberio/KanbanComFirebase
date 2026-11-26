@@ -1,4 +1,4 @@
-package com.danilo.tasks.ui.auth
+package com.daniloA.tasks.ui.auth
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,14 +11,13 @@ import androidx.navigation.fragment.findNavController
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
-import com.danilo.tasks.R
-import com.danilo.tasks.databinding.FragmentRegisterBinding
-import com.danilo.tasks.util.initToolbar
-import com.danilo.tasks.util.showBottomSheet
+import com.daniloA.tasks.R
+import com.daniloA.tasks.databinding.FragmentLoginBinding
+import com.daniloA.tasks.util.showBottomSheet
 
-class RegisterFragment : Fragment() {
+class LoginFragment : Fragment() {
 
-	private var _binding: FragmentRegisterBinding? = null
+	private var _binding: FragmentLoginBinding? = null
 	private val binding get() = _binding!!
 
 	private lateinit var auth: FirebaseAuth
@@ -27,7 +26,7 @@ class RegisterFragment : Fragment() {
 		inflater: LayoutInflater, container: ViewGroup?,
 		savedInstanceState: Bundle?
 	): View {
-		_binding = FragmentRegisterBinding.inflate(inflater, container, false)
+		_binding = FragmentLoginBinding.inflate(inflater, container, false)
 		auth = Firebase.auth
 
 		return binding.root
@@ -35,33 +34,38 @@ class RegisterFragment : Fragment() {
 
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
-		initToolbar(binding.toolbar)
 
+		binding.buttonLogin.setOnClickListener {
+			validateAndLogin()
+		}
 		binding.buttonRegister.setOnClickListener {
-			validateAndRegister()
+			findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+		}
+		binding.buttonRecover.setOnClickListener {
+			findNavController().navigate(R.id.action_loginFragment_to_recoverAccountFragment)
 		}
 	}
 
-	private fun validateAndRegister() {
-		val email = binding.inputEmail.text.toString().trim()
-		val password = binding.inputSenha.text.toString().trim()
+	private fun validateAndLogin() {
+		val email = binding.inputEmail.text.toString()
+		val password = binding.inputSenha.text.toString()
 
 		if (email.isBlank()) {
-			showBottomSheet(message = getString(R.string.register_email_empty))
+			showBottomSheet(message = getString(R.string.email_empty))
 			return
 		}
 		if (password.isBlank()) {
-			showBottomSheet(message = getString(R.string.register__password_empty))
+			showBottomSheet(message = getString(R.string.password_empty))
 			return
 		}
 
-		registerUser(email, password)
+		loginUser(email, password)
 	}
 
-	private fun registerUser(email: String, password: String) {
+	private fun loginUser(email: String, password: String) {
 		binding.progressBar.isVisible = true
 
-		auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+		auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
 			try {
 				val exception = task.exception
 				if (!task.isSuccessful && exception != null) {
@@ -73,7 +77,7 @@ class RegisterFragment : Fragment() {
 				Toast.makeText(
 					requireContext(),
 					e.message.toString(),
-					Toast.LENGTH_SHORT
+					Toast.LENGTH_SHORT,
 				).show()
 			} finally {
 				binding.progressBar.isVisible = false
@@ -85,5 +89,4 @@ class RegisterFragment : Fragment() {
 		super.onDestroyView()
 		_binding = null
 	}
-
 }

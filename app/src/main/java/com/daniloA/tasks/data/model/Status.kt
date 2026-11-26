@@ -1,4 +1,4 @@
-package com.danilo.tasks.data.model
+package com.daniloA.tasks.data.model
 
 enum class Status {
 	TODO,

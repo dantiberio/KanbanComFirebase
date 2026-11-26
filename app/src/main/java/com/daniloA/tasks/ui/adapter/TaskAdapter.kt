@@ -1,4 +1,4 @@
-package com.danilo.tasks.ui.adapter
+package com.daniloA.tasks.ui.adapter
 
 
 import android.content.Context
@@ -9,10 +9,10 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.danilo.tasks.R
-import com.danilo.tasks.data.model.Status
-import com.danilo.tasks.data.model.Task
-import com.danilo.tasks.databinding.ItemTaskBinding
+import com.daniloA.tasks.R
+import com.daniloA.tasks.data.model.Status
+import com.daniloA.tasks.data.model.Task
+import com.daniloA.tasks.databinding.ItemTaskBinding
 
 class TaskAdapter(
 	private val context: Context,

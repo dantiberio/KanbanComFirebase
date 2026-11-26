@@ -1,4 +1,4 @@
-package com.danilo.tasks.ui
+package com.daniloA.tasks.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,15 +10,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
-import com.danilo.tasks.data.model.Status
-import com.danilo.tasks.data.model.Task
-import com.danilo.tasks.databinding.FragmentDoingBinding
-import com.danilo.tasks.ui.adapter.TaskAdapter
-import com.danilo.tasks.util.DatabaseManager
+import com.daniloA.tasks.data.model.Status
+import com.daniloA.tasks.data.model.Task
+import com.daniloA.tasks.databinding.FragmentTodoBinding
+import com.daniloA.tasks.ui.adapter.TaskAdapter
+import com.daniloA.tasks.util.DatabaseManager
 
 
-class DoingFragment : Fragment() {
-	private var _binding: FragmentDoingBinding? = null
+class TodoFragment : Fragment() {
+	private var _binding: FragmentTodoBinding? = null
 	private val binding get() = _binding!!
 
 	private lateinit var auth: FirebaseAuth
@@ -28,7 +28,7 @@ class DoingFragment : Fragment() {
 		inflater: LayoutInflater, container: ViewGroup?,
 		savedInstanceState: Bundle?
 	): View {
-		_binding = FragmentDoingBinding.inflate(inflater, container, false)
+		_binding = FragmentTodoBinding.inflate(inflater, container, false)
 		return binding.root
 	}
 
@@ -50,7 +50,6 @@ class DoingFragment : Fragment() {
 		_binding = null
 	}
 
-
 	private fun getTask() {
 		DatabaseManager
 			.getTasksSnapshots(auth.currentUser?.uid ?: "")
@@ -58,13 +57,12 @@ class DoingFragment : Fragment() {
 				if (!snapshot.exists()) return@addOnSuccessListener
 
 				val tasks = DatabaseManager.snapshotToTasks(snapshot).filter {
-						task -> task.status == Status.DOING
+					task -> task.status == Status.TODO
 				}
 
 				taskAdapter.submitList(tasks)
 			}
 	}
-
 
 	private fun initRecyclerViewTask() {
 		taskAdapter = TaskAdapter(requireContext()) { task, option -> optionSelected(task, option)}
@@ -73,7 +71,6 @@ class DoingFragment : Fragment() {
 			setHasFixedSize(true)
 			adapter = taskAdapter
 		}
-
 	}
 
 	private fun optionSelected(task: Task, option: Int) {
@@ -86,6 +83,5 @@ class DoingFragment : Fragment() {
 			else -> ""
 		}
 		Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
-
 	}
 }

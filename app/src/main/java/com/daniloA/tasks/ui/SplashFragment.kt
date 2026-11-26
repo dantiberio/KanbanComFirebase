@@ -1,4 +1,4 @@
-package com.danilo.tasks.ui
+package com.daniloA.tasks.ui
 
 import android.os.Bundle
 import android.os.Handler
@@ -12,8 +12,8 @@ import androidx.navigation.fragment.findNavController
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
-import com.danilo.tasks.R
-import com.danilo.tasks.databinding.FragmentSplashBinding
+import com.daniloA.tasks.R
+import com.daniloA.tasks.databinding.FragmentSplashBinding
 
 class SplashFragment : Fragment() {
 	private var _binding: FragmentSplashBinding? = null

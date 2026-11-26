@@ -1,11 +1,11 @@
-package com.danilo.tasks.util
+package com.daniloA.tasks.util
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.danilo.tasks.R
-import com.danilo.tasks.databinding.BottomSheetBinding
+import com.daniloA.tasks.R
+import com.daniloA.tasks.databinding.BottomSheetBinding
 
 fun Fragment.initToolbar(toolbar: Toolbar) {
 	val superActivity = activity as AppCompatActivity

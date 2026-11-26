@@ -1,9 +1,9 @@
-package com.danilo.tasks.util
+package com.daniloA.tasks.util
 
 import com.google.firebase.Firebase
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.database
-import com.danilo.tasks.data.model.Task
+import com.daniloA.tasks.data.model.Task
 
 object DatabaseManager {
 	const val DB_NAME_USERS = "users"
